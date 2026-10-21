@@ -1,5 +1,5 @@
 public class Open extends CodeHandler {
-    private String codeOpen;
+    private final String codeOpen;
 
     public Open(String code, CodeHandler nextHandler) {
         super(nextHandler);
@@ -14,13 +14,13 @@ public class Open extends CodeHandler {
                 door.resetState();
                 door.open();
             } else {
-                // It should not increment the number of trials
-                //door.incrementNumTrials();
+                door.incrementNumTrials();
                 System.out.println(door.getNumTrials() + " trials");
                 super.handleCode(code, door);
             }
         } else {
             // void, can't open until unlocked
+            super.handleCode(code, door);
         }
     }
 }

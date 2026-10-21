@@ -1,5 +1,5 @@
 public class FireAlarm extends CodeHandler {
-    private String codeFireAlarm;
+    private final String codeFireAlarm;
 
     public FireAlarm(String code, CodeHandler nextHandler) {
         super(nextHandler);
